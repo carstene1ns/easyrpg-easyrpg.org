@@ -1,0 +1,46 @@
+
+backend:
+  name: github
+  repo: carstene1ns/easyrpg-easyrpg.org
+  branch: blog
+  squash_merges: true
+  base_url: https://sveltia-cms-auth.dev-675.workers.dev/
+
+publish_mode: editorial_workflow
+
+media_folder: "content/uploads"
+public_folder: "/uploads"
+
+site_url: https://blog.easyrpg.org
+#display_url: https://your-site.com # maybe use netlify url
+
+logo:
+  src: https://easyrpg.org/downloads/logos/logo1.svg
+  show_in_header: true
+
+#search: false # avoid rate limiting
+
+collections:
+  - name: blog
+    label: "Blog"
+    folder: "content/blog"
+    path: "{{year}}/{{month}}/{{slug}}"
+    extension: .md
+    format: frontmatter
+    create: true
+    preview_path: "blog/{{year}}/{{month}}/{{slug}}"
+    slug: "{{day}}-{{slug}}"
+    media_folder: ""
+    public_folder: ""
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - name: tags
+        label: Tags
+        widget: select
+        multiple: true
+        options:
+          - { label: Editor, value: editor }
+          - { label: Player, value: player }
+          - { label: Release, value: release }
