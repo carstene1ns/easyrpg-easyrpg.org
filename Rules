@@ -4,6 +4,9 @@ preprocess do
   write_sitemap_file
 end
 
+# leave decapcms files alone
+passthrough '/admin/*'
+
 # all pages
 compile '/**/*.{html,md}' do
   filter :erb
