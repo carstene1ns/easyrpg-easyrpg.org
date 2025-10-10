@@ -4,6 +4,7 @@ backend:
   repo: carstene1ns/easyrpg-easyrpg.org
   branch: blog
   squash_merges: true
+  base_url: https://sveltia-cms-auth.dev-675.workers.dev/
 
 publish_mode: editorial_workflow
 
